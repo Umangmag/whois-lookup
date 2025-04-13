@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useRef } from "react";
 
 function App() {
   const [domain, setDomain] = useState("");
@@ -16,6 +17,7 @@ function App() {
     setError("");
     setResult(null);
 
+    
     try {
       const response = await axios.post("http://localhost:5000/whois", {
         domain,
